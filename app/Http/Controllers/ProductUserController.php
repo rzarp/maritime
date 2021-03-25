@@ -54,7 +54,7 @@ class ProductUserController extends Controller
         $request->validate ([
             'judul'         => 'required',
             'harga'         => 'required',
-            'harga'         => 'required',
+            'kategori'         => 'required',
             'wa'            => 'required',
             'gambar'        => 'max:1000|file|image',
             'desk'          => ' ',
@@ -70,6 +70,7 @@ class ProductUserController extends Controller
                 ->insert([
                     'judul'     => $request->judul,
                     'harga'     => $request->harga,
+                    'kategori'     => $request->kategori,
                     'wa'        => $request->wa,
                     'gambar'    => $path,
                     'desk'      => $request->desk,
@@ -82,8 +83,6 @@ class ProductUserController extends Controller
                 }
     }
 
-    
-    
 
     public function edit($id) {
         $product = Product_user::find($id);
@@ -101,6 +100,7 @@ class ProductUserController extends Controller
             ->update([
                 'judul'     => $request->judul,
                 'harga'     => $request->harga,
+                'kategori'     => $request->kategori,
                 'wa'        => $request->wa,
                 'gambar'    => $path,
                 'desk'      => $request->desk,

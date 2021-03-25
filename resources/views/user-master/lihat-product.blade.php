@@ -30,6 +30,7 @@
                             <th scope="col">no</th>
                             <th scope="col">Judul</th>
                             <th scope="col">Harga</th>
+                            <th scope="col">Kategori</th>
                             <th scope="col">Wa</th>
                             <th scope="col">gambar</th>
                             <th scope="col">desk</th>
@@ -69,6 +70,10 @@
             {
                 data: 'harga',
                 name: 'harga',
+            },
+            {
+                data: 'kategori',
+                name: 'kategori',
             },
              {
                 data: 'wa',

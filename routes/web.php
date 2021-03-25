@@ -92,4 +92,5 @@ Route::get('/dashboard/about','DashboardController@about')->name('about');
 
 
 Auth::routes();
-Route::get('/h
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middleware('is_admin');

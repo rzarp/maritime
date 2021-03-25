@@ -54,6 +54,7 @@ class ProductUserController extends Controller
         $request->validate ([
             'judul'         => 'required',
             'harga'         => 'required',
+            'harga'         => 'required',
             'wa'            => 'required',
             'gambar'        => 'max:1000|file|image',
             'desk'          => ' ',

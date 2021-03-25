@@ -19,13 +19,13 @@
         <div class="col-12 col-md-12 col-lg-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4>Simple</h4>
+                    <h4>Data Pariwisata</h4>
                   </div>
                   <div class="card-body">
                     <table class="table">
                       <thead>
                         <tr>
-                            <th scope="col">no</th>
+                            <th scope="col">No</th>
                             <th scope="col">Judul</th>
                             <th scope="col">Desc</th>
                             <th scope="col">Alamat</th>

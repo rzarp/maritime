@@ -127,6 +127,58 @@ class DashboardController extends Controller
         $data['product'] = Product_user::where('kategori','like',"%"."Pembekuan Ikan"."%")->paginate(6);
 		return view('dashboard.kategori-product',$data);
     }
+    public function catPakaianJadi(Request $request){
+        $data['product'] = Product_user::where('kategori','like',"%"."Pakaian Jadi"."%")->paginate(6);
+		return view('dashboard.kategori-product',$data);
+    }
+    public function catKerajinan(Request $request){
+        $data['product'] = Product_user::where('kategori','like',"%"."Kerajinan"."%")->paginate(6);
+		return view('dashboard.kategori-product',$data);
+    } 
+    public function catIndustriBerbasisLBA(Request $request){
+        $data['product'] = Product_user::where('kategori','like',"%"."Industri Berbasis Lumatan Biota Air"."%")->paginate(6);
+		return view('dashboard.kategori-product',$data);
+    }
+    public function catBatik(Request $request){
+        $data['product'] = Product_user::where('kategori','like',"%"."Batik"."%")->paginate(6);
+		return view('dashboard.kategori-product',$data);
+    }
+    public function catLogamElektro(Request $request){
+        $data['product'] = Product_user::where('kategori','like',"%"."Logam Dan Elektronik"."%")->paginate(6);
+		return view('dashboard.kategori-product',$data);
+    }
+    public function catKerajinanUmum(Request $request){
+        $data['product'] = Product_user::where('kategori','like',"%"."Kerajinan Umum"."%")->paginate(6);
+		return view('dashboard.kategori-product',$data);
+    }
+    public function catKimia(Request $request){
+        $data['product'] = Product_user::where('kategori','like',"%"."Kimia Dan Bahan Bangunan"."%")->paginate(6);
+		return view('dashboard.kategori-product',$data);
+    }
+    public function catPerahu(Request $request){
+        $data['product'] = Product_user::where('kategori','like',"%"."Pembuatan Perahu Nelayan"."%")->paginate(6);
+		return view('dashboard.kategori-product',$data);
+    }
+    public function catEsBatuBelah(Request $request){
+        $data['product'] = Product_user::where('kategori','like',"%"."Pabrik Es Batu Belah"."%")->paginate(6);
+		return view('dashboard.kategori-product',$data);
+    }
+    public function catEsAntang(Request $request){
+        $data['product'] = Product_user::where('kategori','like',"%"."Pabrik Es Antang"."%")->paginate(6);
+		return view('dashboard.kategori-product',$data);
+    }
+    public function catIkanAsin(Request $request){
+        $data['product'] = Product_user::where('kategori','like',"%"."Ikan Asin"."%")->paginate(6);
+		return view('dashboard.kategori-product',$data);
+    }
+    public function catMinyakKelapa(Request $request){
+        $data['product'] = Product_user::where('kategori','like',"%"."Minyak Kelapa"."%")->paginate(6);
+		return view('dashboard.kategori-product',$data);
+    }    
+    public function catKayu(Request $request){
+        $data['product'] = Product_user::where('kategori','like',"%"."Kayu"."%")->paginate(6);
+		return view('dashboard.kategori-product',$data);
+    }
 
 
     public function about() {

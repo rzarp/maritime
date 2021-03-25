@@ -81,10 +81,25 @@ class DashboardController extends Controller
         return view('dashboard.vismis',$data);
     }
 
+
+    //INI KATEGORI KAYANYA
     public function catHasilHutan(Request $request){
         $data['product'] = Product_user::where('kategori','like',"%"."Hasil Hutan"."%")->paginate(6);
 		return view('dashboard.kategori-product',$data);
     }
+    public function catRumahTangga(Request $request){
+        $data['product'] = Product_user::where('kategori','like',"%"."Rumah Tangga"."%")->paginate(6);
+		return view('dashboard.kategori-product',$data);
+    }
+    public function catManufaktur(Request $request){
+        $data['product'] = Product_user::where('kategori','like',"%"."Manufaktur"."%")->paginate(6);
+		return view('dashboard.kategori-product',$data);
+    }
+    public function catPembekuanIkan(Request $request){
+        $data['product'] = Product_user::where('kategori','like',"%"."Pembekuan Ikan"."%")->paginate(6);
+		return view('dashboard.kategori-product',$data);
+    }
+
 
     public function about() {
         $data['subtitle'] = "About";

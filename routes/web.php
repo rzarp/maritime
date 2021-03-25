@@ -86,6 +86,7 @@ Route::delete('/user/deletesetting/{id}','ProductUserController@setting_destroy'
 Route::get('/dashboard/shop','DashboardController@shop')->name('dashboard.shop');
 Route::get('/dashboard/berita','DashboardController@berita')->name('dashboard.berita');
 Route::get('/kategori/hasilhutan','DashboardController@catHasilHutan')->name('dashboard.hasilhutan');;
+Route::get('/kategori/pembekuanikan','DashboardController@catPembekuanIkan')->name('dashboard.pembekuanikan');;
 // dashboard detail shop
 Route::get('/detail/shop/{id}','DashboardController@detail_shop')->name('detail.shop');
 // dashboard Detail Berita

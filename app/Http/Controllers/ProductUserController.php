@@ -218,7 +218,7 @@ class ProductUserController extends Controller
                 
             ]);
 
-        return redirect(route('lihat.product'))->with('pesan','Data Berhasil diupdate');
+        return redirect(route('lihat.pariwata'))->with('pesan','Data Berhasil diupdate');
         }
     }
 

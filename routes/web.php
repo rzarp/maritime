@@ -28,9 +28,16 @@ Route::post('/product/tambah','ProductUserController@store')->name('product.stor
 Route::get('/product/edit/{id}','ProductUserController@edit')->name('product.edit');
 Route::put('/product/edit/{id}','ProductUserController@update')->name('product.update');
 Route::get('/product/hapus/{id}','ProductUserController@destroy')->name('product.destroy');
+
+
 // Pariwisata (User)
 Route::get('/pariwisata/input','ProductUserController@inputpariwisata')->name('input.pariwisata');
 Route::get('/pariwisata/data','ProductUserController@lihatpariwisata')->name('lihat.pariwisata');
+Route::post('/pariwisata/tambah','ProductUserController@store_pariwisata')->name('pariwisata.store');
+Route::get('/pariwisata/edit/{id}','ProductUserController@edit_pariwisata')->name('pariwisata.edit');
+Route::put('/pariwisata/edit/{id}','ProductUserController@update_pariwisata')->name('pariwisata.update');
+Route::get('/pariwisata/hapus/{id}','ProductUserController@destroy_pariwisata')->name('pariwisata.destroy');
+
 
 // User (Admin)
 Route::get('/user/indexuser','AdminController@indexuser')->name('index.user');

@@ -14,7 +14,15 @@ class CreatePariwisatasTable extends Migration
     public function up()
     {
         Schema::create('pariwisatas', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
+            $table->string('judul');
+            $table->string('deskripsi');
+            $table->string('alamat');
+            $table->string('htm');
+            $table->string('kontak');
+            $table->string('gambar');
+            $table->text('fasilitas');
             $table->timestamps();
         });
     }

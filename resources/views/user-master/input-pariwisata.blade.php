@@ -15,7 +15,7 @@
     </div>
     @endif --}}
 
-    <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+    <form action="{{ route('pariwisata.store') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
         @csrf                                
     <div class="row">
 <div class="col-12 col-md-12 col-lg-12">
@@ -31,7 +31,7 @@
                     </div>
                     <div class="form-group">
                       <label>Deskripsi</label>
-                      <textarea class="form-control" rows="3" name="desk" required></textarea>
+                      <textarea class="form-control" rows="3" name="deskripsi" required></textarea>
                     </div>
                     <div class="form-group">
                       <label>Alamat</label>
@@ -43,12 +43,12 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">Rp</span>
                             </div>
-                            <input type="number" class="form-control" name="harga" placeholder="Harga" aria-label="Username" aria-describedby="basic-addon1">
+                            <input type="number" class="form-control" name="htm" placeholder="Harga" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                     </div>
                     <div class="form-group">
                       <label>Contact</label>
-                      <input type="tel" name="wa" class="form-control" placeholder="Contact" required>
+                      <input type="tel" name="kontak" class="form-control" placeholder="Contact" required>
                     </div>
                     <div class="form-group">
                         <form>
@@ -62,7 +62,7 @@
 
                      <div class="form-group">
                       <label>Fasilitas</label>
-                      <textarea class="form-control" rows="3" name="" required></textarea>
+                      <textarea class="form-control" rows="3" name="fasilitas" required></textarea>
                     </div>
                     
                      

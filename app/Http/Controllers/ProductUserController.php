@@ -175,7 +175,7 @@ class ProductUserController extends Controller
             $extFile = $request->gambar->getClientOriginalExtension();
             $namaFile = 'gambar-'.time().".".$extFile;
             $path = $request->gambar->move('img/pariwisata', $namaFile);
-            DB::table('pariwisata')
+            DB::table('pariwisatas')
                 ->insert([
                     'judul'     => $request->judul,
                     'deskripsi'     => $request->deskripsi,
@@ -204,7 +204,7 @@ class ProductUserController extends Controller
             $extFile = $request->gambar->getClientOriginalExtension();
             $namaFile = 'gambar-'.time().".".$extFile;
             $path = $request->gambar->move('img/pariwisata', $namaFile);
-            DB::table('pariwisata')
+            DB::table('pariwisatas')
             ->where('id', $id)
             ->update([
                 'judul'     => $request->judul,
@@ -225,12 +225,12 @@ class ProductUserController extends Controller
     
     public function destroy_pariwisata($id)
     {
-        $pariwisata = DB::table('pariwisata')->where('id',$id)->first();
+        $pariwisata = DB::table('pariwisatas')->where('id',$id)->first();
         if($pariwisata->gambar != 'img/pariwisata/noimage.png') {
             File::delete($pariwisata->gambar);
         }
 
-        DB::table('pariwisata')->where('id',$id)->delete();
+        DB::table('pariwisatas')->where('id',$id)->delete();
 
         return redirect(route('lihat.pariwisata'))->with('pesan','Data Berhasil dihapus!');
     }

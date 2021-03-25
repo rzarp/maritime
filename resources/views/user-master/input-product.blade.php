@@ -69,7 +69,7 @@
                     </div>
                     <div class="form-group">
                       <label>No Wa</label>
-                      <input type="tel" name="wa" class="form-control" value="0858xxxxx" placeholder="Whatsapp" required>
+                      <input type="tel" name="wa" class="form-control" value="08xxxxxxx" placeholder="Whatsapp" required>
                     </div>
                     <div class="form-group">
                         <form>

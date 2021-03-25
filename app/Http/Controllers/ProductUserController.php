@@ -154,7 +154,7 @@ class ProductUserController extends Controller
                 ->make(true);
         }
 
-        return view('');
+        return view('user-master.lihat-pariwisata');
     }
 
    

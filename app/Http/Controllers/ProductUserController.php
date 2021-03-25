@@ -134,7 +134,7 @@ class ProductUserController extends Controller
     public function lihatpariwisata(Request $request)
     {
          if ($request->ajax()) {
-            $pariwisata  = DB::table('pariwisata')->where('user_id', Auth::id())->get();
+            $pariwisata  = DB::table('pariwisatas')->where('user_id', Auth::id())->get();
             return Datatables::of($pariwisata)
                 ->addIndexColumn()  
                 ->addColumn('action', function($row) {

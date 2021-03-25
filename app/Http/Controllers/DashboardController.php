@@ -95,6 +95,34 @@ class DashboardController extends Controller
         $data['product'] = Product_user::where('kategori','like',"%"."Manufaktur"."%")->paginate(6);
 		return view('dashboard.kategori-product',$data);
     }
+    public function catPengeringanIkan(Request $request){
+        $data['product'] = Product_user::where('kategori','like',"%"."Pengeringan Ikan"."%")->paginate(6);
+		return view('dashboard.kategori-product',$data);
+    }
+    public function catPengolahanMakanan(Request $request){
+        $data['product'] = Product_user::where('kategori','like',"%"."Pengolahan Makanan"."%")->paginate(6);
+		return view('dashboard.kategori-product',$data);
+    }
+    public function catPertenunan(Request $request){
+        $data['product'] = Product_user::where('kategori','like',"%"."Pertenunan"."%")->paginate(6);
+		return view('dashboard.kategori-product',$data);
+    }
+    public function catPengolahanIkan(Request $request){
+        $data['product'] = Product_user::where('kategori','like',"%"."Pengolahan Ikan"."%")->paginate(6);
+		return view('dashboard.kategori-product',$data);
+    }
+    public function catPerebusanIkanTeri(Request $request){
+        $data['product'] = Product_user::where('kategori','like',"%"."Perebusan Ikan Teri"."%")->paginate(6);
+		return view('dashboard.kategori-product',$data);
+    }
+    public function catPengawetanIkan(Request $request){
+        $data['product'] = Product_user::where('kategori','like',"%"."Pengawetan Ikan"."%")->paginate(6);
+		return view('dashboard.kategori-product',$data);
+    }
+    public function catPengasapanIkan(Request $request){
+        $data['product'] = Product_user::where('kategori','like',"%"."Pengasapan Ikan"."%")->paginate(6);
+		return view('dashboard.kategori-product',$data);
+    }
     public function catPembekuanIkan(Request $request){
         $data['product'] = Product_user::where('kategori','like',"%"."Pembekuan Ikan"."%")->paginate(6);
 		return view('dashboard.kategori-product',$data);

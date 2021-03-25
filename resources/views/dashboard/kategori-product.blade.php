@@ -27,6 +27,7 @@
                   <div class="block-4-text p-4">
                     <h3><a href="{{ route('detail.shop',$p->id) }}">{{$p->judul}}</a></h3>
                     <p class="mb-0">{{$p->desk}}</p>
+                    <p class="mb-0">{{$p->kategori}}</p>
                     <p class="mb-0">{{$p->user['name']}}</p>
                     <p class="text-primary font-weight-bold">Rp.{{$p->harga}}</p>
                   </div>

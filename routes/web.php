@@ -107,7 +107,7 @@ Route::get('/kategori/pembuatanperahunelayan','DashboardController@catPerahu')->
 Route::get('/kategori/pabrikesbatubelah','DashboardController@catEsBatuBelah')->name('dashboard.esbatubelah');;
 Route::get('/kategori/pabrikesantang','DashboardController@catEsAntang')->name('dashboard.esantang');;
 Route::get('/kategori/ikanasin','DashboardController@catIkanAsin')->name('dashboard.ikanasin');;
-Route::get('/kategori/minyakkelapa','DashboardController@catMinyakKelapa')->name('dashboard.minyakkelapan');;
+Route::get('/kategori/minyakkelapa','DashboardController@catMinyakKelapa')->name('dashboard.minyakkelapa');;
 Route::get('/kategori/kayu','DashboardController@catKayu')->name('dashboard.kayu');;
 
 // dashboard detail shop

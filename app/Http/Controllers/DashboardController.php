@@ -82,7 +82,8 @@ class DashboardController extends Controller
     }
 
     public function catHasilHutan(Request $request){
-        $data['product'] = Product_user::where('judul','like',"%"."Hasil Hutan"."%")->paginate(6);
+		$data['berita'] = Berita::where('judul','like',"%"."Hasil Hutan"."%")->paginate(6);
+        $data['product'] = Product_user::where('kategori','like',"%"."Hasil Hutan"."%")->paginate(6);
 		return view('dashboard.search',$data);
     }
 

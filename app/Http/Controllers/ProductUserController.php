@@ -141,8 +141,8 @@ class ProductUserController extends Controller
                     $btn = '
                         <div class="text-center">
                             <div class="btn-group">
-                                <a href="'.route('product.edit',['id' => $row->id]).'" class="edit btn btn-success btn-sm">Edit</a>
-                                <a href="'.route('product.destroy',['id' => $row->id]).'"  class="btn btn-danger btn-sm delete-confirm ">Hapus</a>
+                                <a href="'.route('pariwisata.edit',['id' => $row->id]).'" class="edit btn btn-success btn-sm">Edit</a>
+                                <a href="'.route('pariwisata.destroy',['id' => $row->id]).'"  class="btn btn-danger btn-sm delete-confirm ">Hapus</a>
                             </div>
                         </div>
                     ';
@@ -162,38 +162,40 @@ class ProductUserController extends Controller
     {
         $request->validate ([
             'judul'         => 'required',
-            'harga'         => 'required',
-            'wa'            => 'required',
+            'deskripsi'         => 'required',
+            'alamat'         => 'required',
+            'htm'         => 'required',
+            'kontak'            => 'required',
             'gambar'        => 'max:1000|file|image',
-            'desk'          => ' ',
-            'alamat'        => ' ',
+            'fasilitas'          => ' ',
             
         ]);
 
         if($request->hasFile('gambar')) {
             $extFile = $request->gambar->getClientOriginalExtension();
             $namaFile = 'gambar-'.time().".".$extFile;
-            $path = $request->gambar->move('img/berita', $namaFile);
-            DB::table('product_users')
+            $path = $request->gambar->move('img/pariwisata', $namaFile);
+            DB::table('pariwisata')
                 ->insert([
                     'judul'     => $request->judul,
-                    'harga'     => $request->harga,
-                    'wa'        => $request->wa,
-                    'gambar'    => $path,
-                    'desk'      => $request->desk,
-                    'alamat'    => $request->alamat,
+                    'deskripsi'     => $request->deskripsi,
+                    'alamat'     => $request->alamat,
+                    'htm'        => $request->htm,
+                    'kontak'    => $request->kontak,
+                    'gambar'      => $path,
+                    'fasilitas'    => $request->fasilitas,
                     'user_id'   => auth()->id(),
                 ]);
                 
-                return redirect(route('input.product'))->with('pesan','Data Berhasil ditambahkan');
+                return redirect(route('input.pariwisata'))->with('pesan','Data Berhasil ditambahkan');
                 
                 }
     }
 
     
     public function edit_pariwisata($id) {
-        $product = Product_user::find($id);
-        return view('user-master.edit-product',['product'=>$product]);
+        $pariwisata = Pariwisata::find($id);
+        return view('user-master.edit-pariwisata',['pariwisata'=>$pariwisata]);
     }
 
    public function update_pariwisata(Request $request, $id) 
@@ -201,16 +203,17 @@ class ProductUserController extends Controller
         if($request->hasFile('gambar')) {
             $extFile = $request->gambar->getClientOriginalExtension();
             $namaFile = 'gambar-'.time().".".$extFile;
-            $path = $request->gambar->move('img/berita', $namaFile);
-            DB::table('product_users')
+            $path = $request->gambar->move('img/pariwisata', $namaFile);
+            DB::table('pariwisata')
             ->where('id', $id)
             ->update([
                 'judul'     => $request->judul,
-                'harga'     => $request->harga,
-                'wa'        => $request->wa,
-                'gambar'    => $path,
-                'desk'      => $request->desk,
-                'alamat'    => $request->alamat,
+                'deskripsi'     => $request->deskripsi,
+                'alamat'     => $request->alamat,
+                'htm'        => $request->htm,
+                'kontak'    => $request->kontak,
+                'gambar'      => $path,
+                'fasilitas'    => $request->fasilitas,
                 'user_id'   => auth()->id(),
                 
             ]);
@@ -222,14 +225,14 @@ class ProductUserController extends Controller
     
     public function destroy_pariwisata($id)
     {
-        $berita = DB::table('product_users')->where('id',$id)->first();
-        if($berita->gambar != 'img/beritas/noimage.png') {
-            File::delete($berita->gambar);
+        $pariwisata = DB::table('pariwisata')->where('id',$id)->first();
+        if($pariwisata->gambar != 'img/pariwisata/noimage.png') {
+            File::delete($pariwisata->gambar);
         }
 
-        DB::table('product_users')->where('id',$id)->delete();
+        DB::table('pariwisata')->where('id',$id)->delete();
 
-        return redirect(route('lihat.product'))->with('pesan','Data Berhasil dihapus!');
+        return redirect(route('lihat.pariwisata'))->with('pesan','Data Berhasil dihapus!');
     }
     // setting
     public function setting() {

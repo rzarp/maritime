@@ -86,7 +86,29 @@ Route::delete('/user/deletesetting/{id}','ProductUserController@setting_destroy'
 Route::get('/dashboard/shop','DashboardController@shop')->name('dashboard.shop');
 Route::get('/dashboard/berita','DashboardController@berita')->name('dashboard.berita');
 Route::get('/kategori/hasilhutan','DashboardController@catHasilHutan')->name('dashboard.hasilhutan');;
+Route::get('/kategori/rumahtangga','DashboardController@catRumahTangga')->name('dashboard.rumahtangga');;
+Route::get('/kategori/manufaktur','DashboardController@catManufaktur')->name('dashboard.manufaktur');;
+Route::get('/kategori/pengeringanikan','DashboardController@catPengeringanIkan')->name('dashboard.pengeringanikan');;
+Route::get('/kategori/pengolahanmakanan','DashboardController@catPengolahanMakanan')->name('dashboard.pengolahanmakanan');;
+Route::get('/kategori/pertenunan','DashboardController@catPertenunan')->name('dashboard.pertenunan');;
+Route::get('/kategori/pengolahanikan','DashboardController@catPengolahanIkan')->name('dashboard.pengolahanikan');;
+Route::get('/kategori/perebusanikanteri','DashboardController@catPerebusanIkanTeri')->name('dashboard.perebusanikanteri');;
+Route::get('/kategori/pengawetanikan','DashboardController@catPengawetanIkan')->name('dashboard.pengawetanikan');;
+Route::get('/kategori/pengasapanikan','DashboardController@catPengasapanIkan')->name('dashboard.pengasapanikan');;
 Route::get('/kategori/pembekuanikan','DashboardController@catPembekuanIkan')->name('dashboard.pembekuanikan');;
+Route::get('/kategori/pakaianjadi','DashboardController@catPakaianJadi')->name('dashboard.pakaianjadi');;
+Route::get('/kategori/kerajinan','DashboardController@catKerajinanUmum')->name('dashboard.kerajinan');;
+Route::get('/kategori/industriberbasislumatanbiotaair','DashboardController@catIndustriBerbasisLBA')->name('dashboard.industrilba');;
+Route::get('/kategori/batik','DashboardController@catBatik')->name('dashboard.batik');;
+Route::get('/kategori/logamdanelektronik','DashboardController@catLogamElektro')->name('dashboard.logamelektro');;
+Route::get('/kategori/kimiadanbahanbangunan','DashboardController@catKimia')->name('dashboard.kimiabahanbangunan');;
+Route::get('/kategori/pembuatanperahunelayan','DashboardController@catPerahu')->name('dashboard.perahunelayan');;
+Route::get('/kategori/pabrikesbatubelah','DashboardController@catEsBatuBelah')->name('dashboard.esbatubelah');;
+Route::get('/kategori/pabrikesantang','DashboardController@catEsAntang')->name('dashboard.esantang');;
+Route::get('/kategori/ikanasin','DashboardController@catIkanAsin')->name('dashboard.ikanasin');;
+Route::get('/kategori/minyakkelapa','DashboardController@catMinyakKelapa')->name('dashboard.minyakkelapan');;
+Route::get('/kategori/kayu','DashboardController@catKayu')->name('dashboard.kayu');;
+
 // dashboard detail shop
 Route::get('/detail/shop/{id}','DashboardController@detail_shop')->name('detail.shop');
 // dashboard Detail Berita

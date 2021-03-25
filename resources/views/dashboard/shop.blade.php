@@ -76,29 +76,29 @@
               <h3 class="mb-3 h6 text-uppercase text-black d-block">Categories</h3>
               <ul class="list-unstyled mb-0">
                 <li class="mb-1"><a href="{{route('dashboard.hasilhutan')}}" class="d-flex"><span>Hasil Hutan</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Rumah Tangga</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Manufaktur</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Pengeringan Ikan</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Pengolahan Makanan</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Pertenunan</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Pengolahan Ikan</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Perebusan Ikan Teri</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Pengawetan Ikan</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Pengasapan Ikan</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a href="{{route('dashboard.rumahtangga')}}" class="d-flex"><span>Rumah Tangga</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a href="{{route('dashboard.manufaktur')}}" class="d-flex"><span>Manufaktur</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a href="{{route('dashboard.pengeringanikan')}}" class="d-flex"><span>Pengeringan Ikan</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a href="{{route('dashboard.pengolahanmakanan')}}" class="d-flex"><span>Pengolahan Makanan</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a href="{{route('dashboard.pertenunan')}}" class="d-flex"><span>Pertenunan</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a href="{{route('dashboard.pengolahanikan')}}" class="d-flex"><span>Pengolahan Ikan</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a href="{{route('dashboard.perebusanikanteri')}}" class="d-flex"><span>Perebusan Ikan Teri</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a href="{{route('dashboard.pengawetanikan')}}" class="d-flex"><span>Pengawetan Ikan</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a href="{{route('dashboard.pengasapanikan')}}" class="d-flex"><span>Pengasapan Ikan</span> <span class="text-black ml-auto">(2,220)</span></a></li>
                 <li class="mb-1"><a href="{{route('dashboard.pembekuanikan')}}" class="d-flex"><span>Pembekuan Ikan</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Pakaian Jadi</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Kerajinan</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Industri Berbasis Lumatan Biota Air</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Batik</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Logam Dan Elektronik</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Kerajinan Umum</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Kimia Dan Bahan Bangunan</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Pembuatan Perahu Nelayan</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Pabrik Es Batu Belah</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Pabrik Es Antang</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Ikan Asin</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Minyak Kelapa</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Kayu</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a href="{{route('dashboard.pakaianjadi')}}" class="d-flex"><span>Pakaian Jadi</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a href="{{route('dashboard.kerajinan')}}" class="d-flex"><span>Kerajinan</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a href="{{route('dashboard.instrilba')}}" class="d-flex"><span>Industri Berbasis Lumatan Biota Air</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a href="{{route('dashboard.batik')}}" class="d-flex"><span>Batik</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a href="{{route('dashboard.logamelektro')}}" class="d-flex"><span>Logam Dan Elektronik</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a href="{{route('dashboard.kerajinanumum')}}" class="d-flex"><span>Kerajinan Umum</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a href="{{route('dashboard.kimiabahanbangunan')}}" class="d-flex"><span>Kimia Dan Bahan Bangunan</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a href="{{route('dashboard.perahunelayan')}}" class="d-flex"><span>Pembuatan Perahu Nelayan</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a href="{{route('dashboard.esbatubelah')}}" class="d-flex"><span>Pabrik Es Batu Belah</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a href="{{route('dashboard.esantang')}}" class="d-flex"><span>Pabrik Es Antang</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a href="{{route('dashboard.ikanasin')}}" class="d-flex"><span>Ikan Asin</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a href="{{route('dashboard.minyakkelapa')}}" class="d-flex"><span>Minyak Kelapa</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a href="{{route('dashboard.kayu')}}" class="d-flex"><span>Kayu</span> <span class="text-black ml-auto">(2,220)</span></a></li>
               </ul>
             </div>
 

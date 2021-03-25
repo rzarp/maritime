@@ -97,10 +97,11 @@ Route::get('/kategori/pengawetanikan','DashboardController@catPengawetanIkan')->
 Route::get('/kategori/pengasapanikan','DashboardController@catPengasapanIkan')->name('dashboard.pengasapanikan');;
 Route::get('/kategori/pembekuanikan','DashboardController@catPembekuanIkan')->name('dashboard.pembekuanikan');;
 Route::get('/kategori/pakaianjadi','DashboardController@catPakaianJadi')->name('dashboard.pakaianjadi');;
-Route::get('/kategori/kerajinan','DashboardController@catKerajinanUmum')->name('dashboard.kerajinan');;
+Route::get('/kategori/kerajinan','DashboardController@catKerajinan')->name('dashboard.kerajinan');;
 Route::get('/kategori/industriberbasislumatanbiotaair','DashboardController@catIndustriBerbasisLBA')->name('dashboard.industrilba');;
 Route::get('/kategori/batik','DashboardController@catBatik')->name('dashboard.batik');;
 Route::get('/kategori/logamdanelektronik','DashboardController@catLogamElektro')->name('dashboard.logamelektro');;
+Route::get('/kategori/kerajinanumum','DashboardController@catKerajinanUmum')->name('dashboard.kerajinanumum');;
 Route::get('/kategori/kimiadanbahanbangunan','DashboardController@catKimia')->name('dashboard.kimiabahanbangunan');;
 Route::get('/kategori/pembuatanperahunelayan','DashboardController@catPerahu')->name('dashboard.perahunelayan');;
 Route::get('/kategori/pabrikesbatubelah','DashboardController@catEsBatuBelah')->name('dashboard.esbatubelah');;

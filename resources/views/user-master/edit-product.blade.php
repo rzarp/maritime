@@ -50,6 +50,35 @@
                         </div>
                     </div>
                     <div class="form-group">
+                      <label>Kategori</label>
+                      <select class="form-control select2" name="kategori" value="{{ $product->kategori}}>
+                        <option>Hasil Hutan</option>
+                        <option>Rumah Tangga</option>
+                        <option>Manufaktur</option>
+                        <option>Pengeringan Ikan</option>
+                        <option>Pengolahan Makanan</option>
+                        <option>Pertenunan</option>
+                        <option>Pengolahan Ikan</option>
+                        <option>Perebusan Ikan Teri</option>
+                        <option>Pengawetan Ikan</option>
+                        <option>Pengasapan Ikan</option>
+                        <option>Pembekuan Ikan</option>
+                        <option>Pakaian Jadi</option>
+                        <option>Kerajinan</option>
+                        <option>Industri Berbasis Lumatan Biota Air</option>
+                        <option>Batik</option>
+                        <option>Logam Dan Elektronik</option>
+                        <option>Kerajinan Umum</option>
+                        <option>Kimia Dan Bahan Bangunan</option>
+                        <option>Pembuatan Perahu Nelayan</option>
+                        <option>Pabrik Es Batu Belah</option>
+                        <option>Pabrik Es Antang</option>
+                        <option>Ikan Asin</option>
+                        <option>Minyak Kelapa</option>
+                        <option>Kayu</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
                       <label>No Wa</label>
                       <input type="tel" name="wa" class="form-control" placeholder="Whatsapp" required value="{{ $product->wa}}">
                       @error('wa')

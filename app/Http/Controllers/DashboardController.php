@@ -81,6 +81,11 @@ class DashboardController extends Controller
         return view('dashboard.vismis',$data);
     }
 
+    public function catHasilHutan(Request $request){
+        $data['product'] = Product_user::where('judul','like',"%"."Hasil Hutan"."%")->paginate(6);
+		return view('dashboard.search',$data);
+    }
+
     public function about() {
         $data['subtitle'] = "About";
         return view('dashboard.about',$data);

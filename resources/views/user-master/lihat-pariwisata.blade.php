@@ -22,7 +22,7 @@
                     <h4>Data Pariwisata</h4>
                   </div>
                   <div class="card-body">
-                    <table class="table">
+                    <table class="table data-table">
                       <thead>
                         <tr>
                             <th scope="col">No</th>

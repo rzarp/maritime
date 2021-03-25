@@ -88,7 +88,7 @@
                 <li class="mb-1"><a href="{{route('dashboard.pembekuanikan')}}" class="d-flex"><span>Pembekuan Ikan</span> <span class="text-black ml-auto">(2,220)</span></a></li>
                 <li class="mb-1"><a href="{{route('dashboard.pakaianjadi')}}" class="d-flex"><span>Pakaian Jadi</span> <span class="text-black ml-auto">(2,220)</span></a></li>
                 <li class="mb-1"><a href="{{route('dashboard.kerajinan')}}" class="d-flex"><span>Kerajinan</span> <span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a href="{{route('dashboard.instrilba')}}" class="d-flex"><span>Industri Berbasis Lumatan Biota Air</span> <span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a href="{{route('dashboard.industrilba')}}" class="d-flex"><span>Industri Berbasis Lumatan Biota Air</span> <span class="text-black ml-auto">(2,220)</span></a></li>
                 <li class="mb-1"><a href="{{route('dashboard.batik')}}" class="d-flex"><span>Batik</span> <span class="text-black ml-auto">(2,220)</span></a></li>
                 <li class="mb-1"><a href="{{route('dashboard.logamelektro')}}" class="d-flex"><span>Logam Dan Elektronik</span> <span class="text-black ml-auto">(2,220)</span></a></li>
                 <li class="mb-1"><a href="{{route('dashboard.kerajinanumum')}}" class="d-flex"><span>Kerajinan Umum</span> <span class="text-black ml-auto">(2,220)</span></a></li>

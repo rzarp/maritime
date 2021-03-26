@@ -18,6 +18,7 @@ class HomeController extends Controller
     public function index()
     {
         $data['product'] = DB::table('product_users')->count();
+        $data['pariwisata'] = DB::table('pariwisatas')->count();
         return view('user-master.dashboard',$data);
     }
 
@@ -27,6 +28,7 @@ class HomeController extends Controller
         $data['user'] = DB::table('users')->count();
         $data['contact'] = DB::table('contacts')->count();
         $data['product'] = DB::table('product_users')->count();
+        
         return view('admin-master.dashboard',$data);
     }
    

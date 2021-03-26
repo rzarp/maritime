@@ -21,7 +21,7 @@
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-map-marker-alt"></i> <span>Pariwisata</span></a>
                 <ul class="dropdown-menu">
                   <li><a class="nav-link beep beep-sidebar" href="{{route('input.pariwisata')}}">Input Pariwisata</a></li>
-                  <li><a class="nav-link beep beep-sidebar" href="">Data Pariwisata</a></li>
+                  <li><a class="nav-link beep beep-sidebar" href="{{route('lihat.pariwisata')}}">Data Pariwisata</a></li>
                 </ul>
               </li>
 

@@ -1,7 +1,7 @@
 @extends('admin-master.base')
 @section('content')
     <div class="section-header">
-        <h1>Input About</h1>        
+        <h1>Edit About</h1>        
     </div>
 
     @if (session()->has('pesan'))
@@ -15,22 +15,33 @@
     </div>
     @endif
 
-    <form action="{{ route('about.store') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
-     @csrf                                  
+    <form action="{{ route('about.update',['id' => $about->id]) }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+        @method('PUT')
+        @csrf                                
     <div class="row">
-    <div class="col-12 col-md-12 col-lg-12">
+<div class="col-12 col-md-12 col-lg-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4>Input About</h4>
+                    <h4>Edit About</h4>
                   </div>
                   <div class="card-body">
                     <div class="form-group">
                       <label>Title</label>
-                        <input type="text" name="title" class="form-control" placeholder="Title" required>
+                      <input type="text" name="title" class="form-control" placeholder="Title"  value="{{ $about->title }}" required>
+                        @error('title')
+                            <div class="text-danger">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-group">
-                      <label>About</label>
-                      <textarea class="form-control" rows="3" name="description" required></textarea>
+                      <label>Description</label>
+                      <textarea class="form-control" name="description" rows="3" id="exampleFormControlTextarea1" required> {{ $about->description }}</textarea>
+                        @error('description')
+                            <div class="text-danger">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <button class="btn btn-danger" type="reset" value="Reset">Reset</button>

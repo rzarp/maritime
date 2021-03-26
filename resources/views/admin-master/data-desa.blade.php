@@ -1,7 +1,7 @@
 @extends('admin-master.base')
 @section('content')
     <div class="section-header">
-        <h1>Lihat Data User</h1>        
+        <h1>Lihat Data Desa</h1>        
     </div>
 
      @if (session()->has('pesan'))
@@ -19,8 +19,8 @@
         <div class="col-12 col-md-12 col-lg-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4>User</h4>
-                    <a class="btn btn-primary" href="{{route('create.user')}}">Input</a>
+                    <h4>Desa Binaan</h4>
+                    <a class="btn btn-primary" href="">Print</a>
                   </div>
                   
                   <div class="card-body">
@@ -28,30 +28,16 @@
                       <thead>
                         <tr>
                             <th scope="col">Id</th>
-                            <th scope="col">Nama</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Is_admin</th>
+                            <th scope="col">satker</th>
+                            <th scope="col">provinsi</th>
+                            <th scope="col">Kabupate</th>
+                            <th scope="col">Kecamatan</th>
+                            <th scope="col">Kelurahan</th>
+                            <th scope="col">Jumlah Penduduk</th>
                             <th scope="col">Action</th>
                         </tr>
                       </thead>
-                        @foreach($user as $users)
-                            <tr>
-                                <td>{{ $users['id'] }}</td>
-                                <td>{{ $users['name'] }}</td>
-                                <td>{{ $users['email'] }}</td>
-                                <td>{{ $users['is_admin'] }}</td>
-                                <td class="text-center">
-                                    <form method="post" action="{{route ('destroy.user',['id' => $users->id]) }}">
-                                        @method('delete')
-                                        @csrf
-                                        <div class="btn-group">
-                                            <a class="btn btn-success" href="{{route ('edit.user',['id' => $users->id]) }}">Edit</a>
-                                            <button type="submit" class="btn btn-danger delete-confirm ">Delete</button>
-                                        </div>
-                                    </form>
-                                </td>
-                            </tr>
-                            @endforeach
+                        
                         </tbody> 
                     </table>
                   </div>

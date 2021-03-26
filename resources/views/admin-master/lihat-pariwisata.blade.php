@@ -1,7 +1,7 @@
-@extends('user-master.base')
+@extends('admin-master.base')
 @section('content')
     <div class="section-header">
-        <h1>Lihat Product</h1>        
+        <h1>Lihat Pariwisata</h1>
     </div>
 
      @if (session()->has('pesan'))
@@ -19,27 +19,26 @@
         <div class="col-12 col-md-12 col-lg-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4>Product</h4>
-                    <a class="btn btn-primary" href="{{route('input.product')}}">Input</a>
+                    <h4>Data Pariwisata</h4>
                   </div>
-                  
                   <div class="card-body">
                     <table class="table data-table">
                       <thead>
                         <tr>
-                            <th scope="col">no</th>
+                            <th scope="col">No</th>
                             <th scope="col">Judul</th>
-                            <th scope="col">Harga</th>
-                            <th scope="col">Kategori</th>
-                            <th scope="col">Wa</th>
-                            <th scope="col">gambar</th>
-                            <th scope="col">desk</th>
-                            <th scope="col">alamat</th>
+                            <th scope="col">Desc</th>
+                            <th scope="col">Alamat</th>
+                            <th scope="col">Harga Tiket Masuk</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">Gambar</th>
+                            <th scope="col">Fasilitas</th>
                             <th scope="col">Aksi</th>
                         </tr>
                       </thead>
                       <tbody>
-                      </tbody> 
+
+                      </tbody>
                     </table>
                   </div>
                 </div>
@@ -47,17 +46,13 @@
     </div>
 
 
-    
-
-    
 @endsection
-
 @section('script')
 <script>
     $('.data-table').DataTable({
         processing: true,
         serverSide: true,
-        ajax: "{{ route('lihat.product')}}",
+        ajax: "{{ route('pariwisata.lihat')}}",
         columns: [
             {
                 data: 'DT_RowIndex',
@@ -68,16 +63,20 @@
                 name: 'judul',
             },
             {
-                data: 'harga',
-                name: 'harga',
+                data: 'deskripsi',
+                name: 'deskripsi',
             },
             {
-                data: 'kategori',
-                name: 'kategori',
+                data: 'alamat',
+                name: 'alamat',
             },
             {
-                data: 'wa',
-                name: 'wa',
+                data: 'htm',
+                name: 'htm',
+            },
+            {
+                data: 'kontak',
+                name: 'kontak',
             },
             {
                 data: 'gambar',
@@ -87,12 +86,8 @@
             },
             },
             {
-                data: 'desk',
-                name: 'desk',
-            },
-            {
-                data: 'alamat',
-                name: 'alamat',
+                data: 'fasilitas',
+                name: 'fasilitas',
             },
             {
                 data: 'action',
@@ -107,7 +102,6 @@
   $('body').on('click','.delete-confirm',function (event) {
     event.preventDefault();
     const url = $(this).attr('href');
-
     Swal.fire({
       title: 'Apakah Kamu Yakin ? ',
       text: "Hapus Data ini!",

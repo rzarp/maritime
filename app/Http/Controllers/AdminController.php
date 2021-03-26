@@ -17,10 +17,12 @@ use DB;
 use Auth;
 use DataTables;
 use App\Product_user;
+use App\Pariwisata;
 
 use App\Contacts;
 use App\Berita;
 use App\Vismis;
+use App\About;
 
 class AdminController extends Controller
 {
@@ -28,6 +30,7 @@ class AdminController extends Controller
     public function indexuser() 
     {
         $data['user']= User::all();
+        // dd($data);
         return view('admin-master.lihat-user',$data);
     }
 
@@ -131,6 +134,45 @@ class AdminController extends Controller
         DB::table('product_users')->where('id',$id)->delete();
 
         return redirect(route('product.lihat'))->with('pesan','Data Berhasil dihapus!');
+    }
+
+    // pariwisata   
+
+    public function lihatpariwisata(Request $request)
+    {
+         if ($request->ajax()) {
+            $pariwisata  = Pariwisata::all();
+            return Datatables::of($pariwisata)
+                ->addIndexColumn()  
+                ->addColumn('action', function($row) {
+                    $btn = '
+                        <div class="text-center">
+                            <div class="btn-group">
+                                <a href="'.route('pariwisata.destroy',['id' => $row->id]).'"  class="btn btn-danger btn-sm delete-confirm ">Hapus</a>
+                            </div>
+                        </div>
+                    ';
+
+                    
+                    return $btn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+        
+        return view('admin-master.lihat-pariwisata');
+    }
+
+    public function destroy_pariwisata($id)
+    {
+        $pariwisata = DB::table('pariwisatas')->where('id',$id)->first();
+        if($pariwisata->gambar != 'img/pariwisata/noimage.png') {
+            File::delete($pariwisata->gambar);
+        }
+
+        DB::table('pariwisatas')->where('id',$id)->delete();
+
+        return redirect(route('pariwisata.lihat'))->with('pesan','Data Berhasil dihapus!');
     }
 
     // Contact
@@ -304,16 +346,80 @@ class AdminController extends Controller
         return redirect(route('lihat.vismis'))->with('pesan','Data Berhasil dihapus!');
     }
 
+    
+
     // About 
     public function about() {
         return view('admin-master.input-about');
     }
 
-    public function inputabout() {
-        
+    public function inputabout(Request $request){
+        $request->validate ([
+            'title'    => 'required:abouts',
+            'description'    => 'required',
+            
+        ]);
+
+        $about = new About();
+        $about->title = $request->title;
+        $about->description = $request->description;
+        $about->save();
+
+        return redirect(route('input.about'))->with('pesan','Data Berhasil ditambahkan');
+    }   
+
+    public function lihatabout() {
+        $data['about'] = About::all();
+        return view('admin-master.lihat-about',$data);
+    }
+
+     public function editabout($id)
+    {
+        $data['about'] = About::find($id);
+        return view('admin-master.edit-about',$data);
+    }
+
+    public function updateabout(Request $request, $id)
+    {
+        $request->validate ([
+            'title'         => 'required:abouts',
+            'description'   => ' ',
+        ]);
+
+        $about = About::find($id);
+        $about->title       = $request->title;
+        $about->description = $request->description;
+        $about->save();
+
+        return redirect(route('lihat.about'))->with('pesan','Data Berhasil diupdate');
+    }
+
+     public function destroy_about($id)
+    {
+        $about = About::find($id);
+        $about->delete();
+
+        return redirect(route('lihat.about'))->with('pesan','Data Berhasil dihapus!');
     }
 
 
+    // master Data penduduk
+    public function inputpenduduk() {
+        return view('admin-master.input-penduduk');
+    }
 
+    public function lihatpenduduk() {
+        return view('admin-master.data-penduduk');
+    }
+
+    // master data desa binaan 
+
+    public function inputdesa() {
+        return view('admin-master.input-desa');
+    }
+
+    public function lihatdesa() {
+        return view('admin-master.data-desa');
+    }
 
 }

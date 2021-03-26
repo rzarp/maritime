@@ -40,7 +40,7 @@
                     </div>
                     <div class="form-group">
                       <label>Kategori</label>
-                      <select class="form-control select2">
+                      <select class="form-control select2" name="kategori">
                         <option>Hasil Hutan</option>
                         <option>Rumah Tangga</option>
                         <option>Manufaktur</option>

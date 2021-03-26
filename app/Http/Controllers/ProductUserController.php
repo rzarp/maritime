@@ -5,11 +5,13 @@ use Illuminate\Support\Facades\Hash;
 
 use App\Product_user;
 use App\User;
+use App\Pariwisata;
 use Illuminate\Http\Request;
 use File;
 use DB;
 use Auth;
 use DataTables;
+
 
 
 
@@ -43,7 +45,7 @@ class ProductUserController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-
+        
         return view('user-master.lihat-product');
     }
 
@@ -53,6 +55,7 @@ class ProductUserController extends Controller
         $request->validate ([
             'judul'         => 'required',
             'harga'         => 'required',
+            'kategori'         => 'required',
             'wa'            => 'required',
             'gambar'        => 'max:1000|file|image',
             'desk'          => ' ',
@@ -68,6 +71,7 @@ class ProductUserController extends Controller
                 ->insert([
                     'judul'     => $request->judul,
                     'harga'     => $request->harga,
+                    'kategori'     => $request->kategori,
                     'wa'        => $request->wa,
                     'gambar'    => $path,
                     'desk'      => $request->desk,
@@ -99,6 +103,7 @@ class ProductUserController extends Controller
             ->update([
                 'judul'     => $request->judul,
                 'harga'     => $request->harga,
+                 'kategori'     => $request->kategori,
                 'wa'        => $request->wa,
                 'gambar'    => $path,
                 'desk'      => $request->desk,
@@ -129,6 +134,109 @@ class ProductUserController extends Controller
     public function inputpariwisata() {
         return view ('user-master.input-pariwisata');
     }
+
+    public function lihatpariwisata(Request $request)
+    {
+         if ($request->ajax()) {
+            $pariwisata  = DB::table('pariwisatas')->where('user_id', Auth::id())->get();
+            return Datatables::of($pariwisata)
+                ->addIndexColumn()  
+                ->addColumn('action', function($row) {
+                    $btn = '
+                        <div class="text-center">
+                            <div class="btn-group">
+                                <a href="'.route('pariwisata.edit',['id' => $row->id]).'" class="edit btn btn-success btn-sm">Edit</a>
+                                <a href="'.route('pariwisata.destroy',['id' => $row->id]).'"  class="btn btn-danger btn-sm delete-confirm ">Hapus</a>
+                            </div>
+                        </div>
+                    ';
+
+                    
+                    return $btn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+        
+        return view('user-master.lihat-pariwisata');
+    }
+
+    public function store_pariwisata(Request $request)
+    {
+        $request->validate ([
+            'judul'         => 'required',
+            'deskripsi'         => 'required',
+            'alamat'         => 'required',
+            'htm'         => 'required',
+            'kontak'            => 'required',
+            'gambar'        => 'max:1000|file|image',
+            'fasilitas'          => ' ',    
+            
+        ]);
+
+        if($request->hasFile('gambar')) {
+            $extFile = $request->gambar->getClientOriginalExtension();
+            $namaFile = 'gambar-'.time().".".$extFile;
+            $path = $request->gambar->move('img/pariwisata', $namaFile);
+            DB::table('pariwisatas')
+                ->insert([
+                    'judul'     => $request->judul,
+                    'deskripsi' => $request->deskripsi,
+                    'alamat'    => $request->alamat,
+                    'htm'       => $request->htm,
+                    'kontak'    => $request->kontak,
+                    'gambar'    => $path,
+                    'fasilitas' => $request->fasilitas,
+                    'user_id'   => auth()->id(),
+                ]);
+                
+                return redirect(route('input.pariwisata'))->with('pesan','Data Berhasil ditambahkan');
+                
+                }
+    }
+
+    public function edit_pariwisata($id) {
+        $pariwisata = Pariwisata::find($id);
+        return view('user-master.edit-pariwisata',['pariwisata'=>$pariwisata]);
+    }
+
+    public function update_pariwisata(Request $request, $id) 
+    {
+        if($request->hasFile('gambar')) {
+            $extFile = $request->gambar->getClientOriginalExtension();
+            $namaFile = 'gambar-'.time().".".$extFile;
+            $path = $request->gambar->move('img/pariwisata', $namaFile);
+            DB::table('pariwisatas')
+            ->where('id', $id)
+            ->update([
+                'judul'     => $request->judul,
+                'deskripsi'     => $request->deskripsi,
+                'alamat'     => $request->alamat,
+                'htm'        => $request->htm,
+                'kontak'    => $request->kontak,
+                'gambar'      => $path,
+                'fasilitas'    => $request->fasilitas,
+                'user_id'   => auth()->id(),
+                
+            ]);
+
+        return redirect(route('lihat.pariwisata'))->with('pesan','Data Berhasil diupdate');
+        }
+    }
+
+    public function destroy_pariwisata($id)
+    {
+        $pariwisata = DB::table('pariwisatas')->where('id',$id)->first();
+        if($pariwisata->gambar != 'img/pariwisata/noimage.png') {
+            File::delete($pariwisata->gambar);
+        }
+
+        DB::table('pariwisatas')->where('id',$id)->delete();
+
+        return redirect(route('lihat.pariwisata'))->with('pesan','Data Berhasil dihapus!');
+    }
+
+    
 
     // setting
     public function setting() {
